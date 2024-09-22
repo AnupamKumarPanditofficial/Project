@@ -1,0 +1,150 @@
+<html></html>
+<head>
+    <title>StudentConnect</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        
+.button {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+    </style>
+</head>
+<body class="bg-teal-100">
+    <div id="root"></div>
+    <script type="text/babel">
+        function App() {
+            const [darkMode, setDarkMode] = React.useState(false);
+
+            const toggleDarkMode = () => {
+                setDarkMode(!darkMode);
+            };
+
+            return (
+                <div className={darkMode ? "bg-gray-800 text-white min-h-screen flex flex-col" : "bg-yellow-100 text-black min-h-screen flex flex-col"}>
+                    <header className={darkMode ? "bg-gray-900 p-4 flex justify-between items-center" : "bg-blue-100 p-4 flex justify-between items-center"}>
+                        <div className="flex items-center">
+                            <img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+                            <span className="text-blue-700 font-bold text-xl">StudentConnect</span>
+                        </div>
+                        <nav className="flex items-center space-x-4">
+                            <button onClick={toggleDarkMode} className="text-xl">
+                                <i className={darkMode ? "fas fa-toggle-on text-white" : "fas fa-toggle-on text-blue-700"}></i>
+                            </button>
+                            <a href="Student1.html" className={darkMode ? "text-white flex items-center hover:text-gray-400" : "text-blue-700 flex items-center hover:text-blue-500"}>
+                                <i className="fas fa-home mr-1"></i> Home
+                            </a>
+                            <a href="Contact.html" className={darkMode ? "text-white flex items-center hover:text-gray-400" : "text-blue-700 flex items-center hover:text-blue-500"}>
+                                <i className="fas fa-phone mr-1"></i> Contact us
+                            </a>  `
+                            <a href="ourMember.html" className={darkMode ? "text-white flex items-center hover:text-gray-400" : "text-blue-700 flex items-center hover:text-blue-500"}>
+                                <i className="fas fa-users mr-1"></i> Our Teams
+                            </a>
+                            <a href="MyProfile.html" className={darkMode ? "text-white hover:text-gray-400" : "text-blue-700 hover:text-blue-500"}><i className={darkMode ? "fas fa-user-circle text-xl text-white" : "fas fa-user-circle text-xl text-blue-700"}></i>My profile</a>
+                            
+                        </nav>
+                    </header>
+                    <main className="flex-grow flex flex-col justify-center items-center text-center">
+                        <p className="text-xl">
+                            We welcome you on this amazing Platform. This is an only platform which really helpful for students and tutors.
+                        </p>
+                        <p className="text-xl font-bold mt-4">
+                            Scroll down below to familiar with our service.
+                        </p>
+                      
+                        
+                        <button class="button" onClick={() => window.location.href = 'Std2.html'}>
+                          Apply Now 
+                          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                              fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+
+
+                    </main>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

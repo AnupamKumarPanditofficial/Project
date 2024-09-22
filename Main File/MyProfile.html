@@ -1,0 +1,128 @@
+<html></html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .sidebar:hover {
+            background-color: black;
+            color: white;
+        }
+        .sidebar:hover a {
+            color: white;
+        }
+        .sidebar:hover p {
+            color: white;
+        }
+        .sidebar:hover i {
+            color: white;
+        }
+        .link:hover {
+            color: black;
+        }
+        .profile:hover {
+            background-color: red;
+        }
+        .profile:hover i {
+            color: pink;
+        }
+        .profile:hover p {
+            color: green;
+        }
+        .hover-glow {
+            position: relative;
+            display: inline-block;
+        }
+        .hover-glow::before,
+        .hover-glow::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            background-color: black;
+            transition: width 0.3s;
+        }
+        .hover-glow::before {
+            left: 50%;
+        }
+        .hover-glow::after {
+            right: 50%;
+        }
+        .hover-glow:hover::before,
+        .hover-glow:hover::after {
+            width: 50%;
+        }
+        .hover-glow:hover {
+            color: #00008B; 
+        }
+        .main-content:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        
+        <div class="w-1/5 bg-white h-screen shadow-md sidebar">
+            <div class="flex flex-col items-center py-6">
+                <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center profile">
+                    <i class="fas fa-user text-blue-500 text-4xl"></i>
+                </div>
+                <p class="mt-4 text-gray-700">Kanhai Chatterjee</p>
+            </div>
+            <nav class="mt-10">
+                <a href="Std1.html" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-home mr-3"></i> Home
+                </a>
+                <a href="#" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-question-circle mr-3"></i> About
+                </a>
+                <a href="#" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-graduation-cap mr-3"></i> Courses
+                </a>
+                <a href="#" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-chalkboard-teacher mr-3"></i> Teachers
+                </a>
+                <a href="#" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-phone mr-3"></i> Contact us
+                </a>
+                <a href="notification.html" class="flex items-center py-2 px-8 text-gray-700 hover:bg-gray-200 link">
+                    <i class="fas fa-bell mr-3"></i> Notification
+                </a>
+            </nav>
+        </div>
+
+       
+        <div class="w-4/5 main-content">
+            
+            <div class="bg-green-200 p-4 flex justify-between items-center">
+                <div class="flex items-center"><img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+                    <span class="text-blue-700 font-bold text-xl">StudentConnect</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="Std1.html" class="text-gray-700 hover-glow"><i class="fas fa-home"></i> Home</a>
+                    <a href="Contact.html" class="text-gray-700 hover-glow"><i class="fas fa-phone"></i> Contact us</a>
+                    <a href="ourMember.html" class="text-gray-700 hover-glow"><i class="fas fa-users"></i> Our Teams</a>
+                    
+                </div>
+            </div>
+
+           
+            <div class="p-8">
+                <div class="bg-purple-100 p-4 border-dashed border-4 border-purple-300 rounded-lg">
+                    <h2 class="text-center text-blue-700 text-2xl font-bold">Summary</h2>
+                </div>
+                <div class="mt-4 p-8 bg-purple-200 border-2 border-blue-500 rounded-lg flex justify-center">
+                    <div class="bg-yellow-100 p-4 border-2 border-yellow-500 rounded-lg flex flex-col items-center">
+                        <p class="text-green-700">Name - Aditya Roy</p>
+                        <p class="text-green-700">Class - 10th</p>
+                        <p class="text-green-700">Subject - Math, science</p>
+                        <p class="text-green-700">Apply for tuition - Math and science</p>
+                        <p class="text-green-700">Apply for Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

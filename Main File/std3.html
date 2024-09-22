@@ -1,0 +1,186 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-purple-200 {
+            background-color: #2d3748;
+        }
+        .dark-mode .bg-teal-200 {
+            background-color: #2c5282;
+        }
+        .dark-mode .bg-yellow-100 {
+            background-color: #4a5568;
+        }
+        .dark-mode .text-purple-700 {
+            color: #1e3a8a;
+        }
+        .dark-mode .bg-purple-600 {
+            background-color: #4a5568;
+        }
+        .dark-mode .bg-purple-200 {
+            background-color: #718096;
+        }
+        .dark-mode .border-teal-500 {
+            border-color: #63b3ed;
+        }
+        .dark-mode .text-white {
+            color: #ffffff;
+        }
+        .dark-mode .bg-deep-blue {
+            background-color: #1e3a8a;
+        }
+        .dark-mode .text-bright-white {
+            color: #f0f0f0;
+        }
+        .dark-mode .rounded-apply {
+            border-radius: 25%;
+        }
+        .dark-mode .bg-pink {
+            background-color: pink;
+        }
+        .dark-mode .header-no-hover a:hover {
+            box-shadow: none;
+        }
+  </style>
+ </head>
+ <body class="bg-teal-100">
+  <div class="bg-purple-200 p-4 flex justify-between items-center header-no-hover">
+   <div class="flex items-center"><img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+    <span class="text-xl font-bold text-purple-700">
+     StudentConnect
+    </span>
+   </div>
+   <div class="flex items-center space-x-4">
+    <i class="fas fa-toggle-on text-2xl cursor-pointer" id="toggleButton">
+    </i>
+    <a class="text-purple-700" href="Std1.html">
+     Home
+    </a>
+    <a class="text-purple-700" href="Contact.html">
+     Contact us
+    </a>
+    <a class="text-purple-700" href="ourMember.html">
+     Our Teams
+    </a>
+    <a class="text-purple-700" href="MyProfile.html">
+     My Profile
+    </a>
+    <i class="fas fa-user-circle text-2xl">
+    </i>
+   </div>
+  </div>
+  <div class="flex">
+   <div class="w-1/4 bg-teal-200 p-4">
+    <div class="mb-4">
+     <h2 class="font-bold mb-2">
+      Choose class-
+     </h2>
+     <div>
+      <input id="class9" name="class9" type="checkbox"/>
+      <label for="class9">
+       9th
+      </label>
+     </div>
+     <div>
+      <input id="class10" name="class10" type="checkbox"/>
+      <label for="class10">
+       10th
+      </label>
+     </div>
+     <div>
+      <input id="class11" name="class11" type="checkbox"/>
+      <label for="class11">
+       11th
+      </label>
+     </div>
+    </div>
+    <div class="mb-4">
+     <h2 class="font-bold mb-2">
+      Choose Subject-
+     </h2>
+     <div>
+      <input id="math" name="math" type="checkbox"/>
+      <label for="math">
+       Math
+      </label>
+     </div>
+     <div>
+      <input id="science" name="science" type="checkbox"/>
+      <label for="science">
+       Science
+      </label>
+     </div>
+     <div>
+      <input id="english" name="english" type="checkbox"/>
+      <label for="english">
+       English
+      </label>
+     </div>
+    </div>
+    <button class="bg-purple-600 py-2 px-4 rounded text-white" id="searchButton">
+     Search
+    </button>
+   </div>
+   <div class="w-3/4 p-8 grid grid-cols-3 gap-8 overflow-y-auto" style="max-height: 80vh;" id="profileSection">
+    
+   </div>
+  </div>
+  <script>
+   document.getElementById('toggleButton').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.classList.toggle('fa-toggle-off');
+            this.classList.toggle('fa-toggle-on');
+            document.querySelectorAll('.bg-teal-200, .bg-purple-200, .bg-yellow-100, .text-purple-700, .bg-purple-600, .bg-purple-200, .border-teal-500').forEach(function(element) {
+                element.classList.toggle('text-white');
+            });
+            document.querySelectorAll('.bg-purple-600').forEach(function(element) {
+                element.classList.toggle('bg-deep-blue');
+            });
+            document.querySelectorAll('.bg-purple-200').forEach(function(element) {
+                element.classList.toggle('text-bright-white');
+                element.classList.toggle('rounded-apply');
+                element.classList.toggle('bg-pink');
+            });
+            document.querySelectorAll('.header-no-hover a').forEach(function(element) {
+                element.classList.toggle('text-deep-blue');
+            });
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const profileSection = document.getElementById('profileSection');
+            profileSection.innerHTML = `
+                <div class="border-2 border-teal-500 p-4 bg-yellow-100">
+                    <img alt="Profile image" class="mx-auto mb-2" height="100" src="https://placehold.co/100x100" width="100"/>
+                    <p class="text-center">Aditya Roy<br/>(1-2)years exp.</p>
+                    <button class="bg-purple-200 text-purple-700 py-1 px-4 mt-2 block mx-auto rounded-apply">Apply</button>
+                </div>
+                <div class="border-2 border-teal-500 p-4 bg-yellow-100">
+                    <img alt="Profile image" class="mx-auto mb-2" height="100" src="https://placehold.co/100x100" width="100"/>
+                    <p class="text-center">Aditya Roy<br/>(0-1)years exp.</p>
+                    <button class="bg-purple-200 text-purple-700 py-1 px-4 mt-2 block mx-auto rounded-apply">Apply</button>
+                </div>
+                <div class="border-2 border-teal-500 p-4 bg-yellow-100">
+                    <img alt="Profile image" class="mx-auto mb-2" height="100" src="https://placehold.co/100x100" width="100"/>
+                    <p class="text-center">Aditya Roy<br/>(2-3)years exp.</p>
+                    <button class="bg-purple-200 text-purple-700 py-1 px-4 mt-2 block mx-auto rounded-apply">Apply</button>
+                </div>
+                <div class="border-2 border-teal-500 p-4 bg-yellow-100">
+                    <img alt="Profile image" class="mx-auto mb-2" height="100" src="https://placehold.co/100x100" width="100"/>
+                    <p class="text-center">Aditya Roy<br/>(6) years exp.</p>
+                    <button class="bg-purple-200 text-purple-700 py-1 px-4 mt-2 block mx-auto rounded-apply">Apply</button>
+                </div>
+            `;
+        });
+  </script>
+ </body>
+</html>

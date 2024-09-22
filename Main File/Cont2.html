@@ -1,0 +1,99 @@
+<html> 
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .glow-on-hover {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.7);
+        }
+        .dark-mode {
+            background-color: #000000;
+            color: #cbd5e0;
+        }
+        /* Add your other styles here */
+    </style>
+</head>
+<body class="bg-green-200 overflow-y-scroll h-screen">
+    <div class="bg-purple-200 p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+            <span class="ml-2 text-xl font-bold text-blue-700">StudentConnect</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i id="theme-toggle" class="fas fa-toggle-on text-2xl text-blue-700 cursor-pointer" onclick="toggleDarkMode()"></i>
+            <a href="Login.html" class="text-blue-700"><i class="fas fa-home"></i>Home</a>
+            <a href="Memx.html" class="text-blue-700"><i class="fas fa-users"></i>Our Teams</a>
+        </div>
+    </div>
+    <div class="text-center mt-8">
+        <h1 class="text-4xl font-bold text-green-900">Connect With Us</h1>
+        <p class="text-lg text-green-900 mt-2">We would love to respond to your queries and help you succeed. Feel free to get in touch with us.</p>
+    </div>
+    <div class="flex justify-center mt-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-3/4 flex">
+            <div class="w-2/3 pr-4">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4">Send your request</h2>
+                
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700">Name</label>
+                            <input type="text" placeholder="John Amendo" class="w-full border-b-2 border-blue-500 focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Phone</label>
+                            <input type="text" placeholder="+1 412 520 3231" class="w-full border-b-2 border-blue-500 focus:outline-none" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-gray-700">Email</label>
+                            <input type="email" placeholder="johnamendogm@gmail.com" class="w-full border-b-2 border-blue-500 focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Subject</label>
+                            <input type="text" placeholder="Product Demo" class="w-full border-b-2 border-blue-500 focus:outline-none" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700">Message</label>
+                        <textarea class="w-full border-2 border-gray-300 rounded-lg p-2 focus:outline-none" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    
+                    <!-- Send Button -->
+                    <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded-lg glow-on-hover">
+                        SEND
+                    </button>
+                </form>
+            </div>
+            <div class="w-[calc(33.333%+3px)] bg-blue-700 text-white p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4">Reach Us</h2>
+                <p class="mb-4"><strong>Email</strong><br>contactus@example.com</p>
+                <p class="mb-4"><strong>Phone</strong><br>+1 012 345 6789</p>
+                <p><strong>Address</strong><br>#212, Ground floor, 7th cross<br>Some layout, Some Road, Koromangla<br>Bengaluru 560001</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // When the form is submitted, redirect to Confirm.html
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form's default submission behavior
+            window.location.href = 'Confirm.html';  // Redirect to Confirm.html
+        });
+
+        function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #1D4ED8;
+   }
+   .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1D4ED8;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+   }
+   .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+   }
+
+   
+   .dark-mode {
+    background-color: #1a202c;
+    color: white;
+   }
+   .dark-mode header {
+    background-color: #2d3748;
+   }
+   .dark-mode .bg-white {
+    background-color: #2d3748;
+    color: white;
+   }
+   .dark-mode .bg-black {
+    background-color: #1a202c;
+   }
+   .dark-mode .text-blue-500 {
+    color: #63b3ed;
+   }
+   .dark-mode .bg-gray-800 {
+    background-color: #2d3748;
+    border-color: #4a5568;
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-roboto" id="body">
+  <header class="bg-green-100 p-4 flex justify-between items-center">
+   <div class="flex items-center"><img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+    <span class="ml-2 text-2xl font-bold text-purple-600">StudentConnect</span>
+   </div>
+   <div class="flex items-center space-x-4">
+    <nav class="flex space-x-4">
+     <a class="text-blue-600 font-bold flex items-center hover-underline-animation" href="Index.html">
+      <i class="fas fa-home mr-1"></i> Home
+     </a>
+     <a class="text-blue-600 font-bold flex items-center hover-underline-animation" href="Cont2.html">
+      <i class="fas fa-phone mr-1"></i> Contact us
+     </a>
+     <a class="text-blue-600 font-bold flex items-center hover-underline-animation" href="Memx.html">
+      <i class="fas fa-users mr-1"></i> Our Teams
+     </a>
+    </nav>
+    
+    <button id="toggleButton" class="bg-blue-500 text-white p-2 rounded" onclick="toggleDarkMode()">
+     <i class="fas fa-moon"></i> 
+    </button>
+   </div>
+  </header>
+
+  <main class="flex justify-center items-center h-screen">
+   <div class="bg-white p-8 rounded-lg shadow-lg w-3/4 flex space-x-8">
+    <div class="w-1/2 flex justify-center items-center">
+     <img alt="Placeholder image" class="w-full" height="200" 
+     src="https://images.pexels.com/photos/716276/pexels-photo-716276.jpeg?auto=compress&cs=tinysrgb&w=600"/>
+    </div>
+    <div class="w-1/2 bg-black text-white p-8 rounded-lg">
+     <h2 class="text-2xl font-bold mb-4 flex items-center">
+      <i class="fas fa-circle text-blue-500 mr-2"></i> Register as Student
+     </h2>
+     <p class="mb-4">Signup now and get full access to our app.</p>
+     <form id="signupForm">
+      <div class="flex space-x-4 mb-4">
+       <input class="w-1/2 p-2 rounded bg-gray-800 border border-gray-700" placeholder="Firstname" type="text" id="firstname" required/>
+       <input class="w-1/2 p-2 rounded bg-gray-800 border border-gray-700" placeholder="Lastname" type="text" id="lastname" required/>
+      </div>
+      <input class="w-full p-2 mb-4 rounded bg-gray-800 border border-gray-700" placeholder="Email" type="email" id="email" required/>
+      <input class="w-full p-2 mb-4 rounded bg-gray-800 border border-gray-700" placeholder="Password" type="password" id="password" required/>
+      <input class="w-full p-2 mb-4 rounded bg-gray-800 border border-gray-700" placeholder="Confirm password" type="password" required/>
+      <button class="w-full p-2 bg-blue-500 text-white rounded" type="submit">Submit</button>
+     </form>
+     <p class="mt-4">
+      Already have an account? <a class="text-blue-500" href="">Guest Login</a>
+     </p>
+    </div>
+   </div>
+  
+   <div class="fixed bottom-4 right-4">
+    <button id="toggleButtonRight" class="bg-blue-500 text-white p-3 rounded-full" onclick="toggleDarkMode()">
+     <i class="fas fa-moon"></i> 
+    </button>
+   </div>
+  </main>
+
+  <script>
+   function toggleDarkMode() {
+    const body = document.getElementById('body');
+    body.classList.toggle('dark-mode');
+   }
+
+   document.getElementById("signupForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+   
+    const firstname = document.getElementById("firstname").value;
+    const lastname = document.getElementById("lastname").value;
+    const email = document.getElementById("email").value;
+
+
+    if (confirm(`Is this your information?\nName: ${firstname} ${lastname}\nEmail: ${email}`)) {
+     alert("Form submitted successfully!");
+
+    
+     window.location.href = "Std1.html"; 
+    } else {
+     alert("Please review your details.");
+    }
+   });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,68 @@
+<html></html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .toggle-color {
+            cursor: pointer;
+        }
+        .text-center {
+         height: 100vh;
+         text-align: center;
+         }
+    </style>
+</head>
+<body class="bg-green-200 font-roboto" id="body">
+    <div class="bg-purple-200 p-4 flex justify-between items-center" id="header">
+        <div class="flex items-center">
+        <img src="Photo1.png" height="30px" width="32px" alt="logo">
+            <span class="ml-2 text-xl font-bold text-blue-700">StudentConnect</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i id="toggle-button" class="fas fa-toggle-on text-2xl text-blue-600 toggle-color"></i>
+            <a href="Index.html" class="text-blue-600"><i class="fas fa-home"></i> Home</a>
+            <a href="Cont2.html" class="text-blue-600"><i class="fas fa-phone"></i>Contact us</a>
+            <a href="Memx.html" class="text-blue-600"><i class="fas fa-users"></i> Our Teams</a>
+        </div>
+    </div>
+    <div class="bg-teal-300 text-center py-20" id="main-content">
+        <p class="text-xl font-bold text-gray-800 mb-4">Our vision is to give contribution in the field of education and remove the barrier of money related issue during student’s educational journey. We will provide work according to Student skillset</p>
+        <div class="bg-yellow-200 border-2 border-dashed border-yellow-400 inline-block px-8 py-4 mb-8">
+            Join now with us and Get Advantages from this amazing platform.
+        </div>
+        <div class="flex justify-center space-x-8">
+            <button class="bg-blue-600 text-white text-lg font-bold py-4 px-8 rounded-full" onclick="window.location.href = 'LoginStudent.html'">Student<br />Sign-up / Login</button>
+            <button class="bg-blue-600 text-white text-lg font-bold py-4 px-8 rounded-full" onclick="window.location.href = 'LoginTutor.html'">Tutor<br />Sign-up / Login</button>
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('toggle-button').addEventListener('click', function() {
+            document.getElementById('body').classList.toggle('bg-gray-100');
+            document.getElementById('body').classList.toggle('bg-gray-900');
+            document.getElementById('header').classList.toggle('bg-gray-200');
+            document.getElementById('header').classList.toggle('bg-gray-800');
+            document.getElementById('main-content').classList.toggle('bg-teal-300');
+            document.getElementById('main-content').classList.toggle('bg-teal-700');
+            document.getElementById('footer').classList.toggle('bg-gray-200');
+            document.getElementById('footer').classList.toggle('bg-gray-800');
+            document.querySelectorAll('a').forEach(function(element) {
+                element.classList.toggle('text-blue-600');
+                element.classList.toggle('text-white');
+            });
+            document.querySelectorAll('p').forEach(function(element) {
+                element.classList.toggle('text-gray-800');
+                element.classList.toggle('text-gray-200');
+            });
+            document.querySelectorAll('button').forEach(function(element) {
+                element.classList.toggle('bg-blue-600');
+                element.classList.toggle('bg-blue-800');
+            });
+            this.classList.toggle('text-blue-600');
+            this.classList.toggle('text-white');
+        });
+    </script>
+</body>
+</html>

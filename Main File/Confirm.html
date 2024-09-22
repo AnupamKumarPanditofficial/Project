@@ -1,0 +1,77 @@
+<html></html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        .toggle-checkbox:checked + .toggle-label .toggle-circle {
+            transform: translateX(1.25rem);
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark-mode .bg-purple-200 {
+            background-color: #2d3748;
+        }
+        .dark-mode .text-blue-600 {
+            color: #63b3ed;
+        }
+        .dark-mode .text-gray-800 {
+            color: #000000;
+        }
+        .dark-mode .bg-teal-300 {
+            background-color: rgba(56, 178, 172, 0.5); 
+        }
+    </style>
+</head>
+<body class="bg-gray-100 transition-colors duration-300">
+    <div class="max-w-screen-lg mx-auto">
+        <div class="bg-purple-200 p-4 flex justify-between items-center transition-colors duration-300">
+            <div class="flex items-center">
+                <img src="Photo1.png" height="30px" width="32px" alt="Logo" className="mr-2"/>
+                <span class="ml-2 text-xl font-semibold text-blue-600">StudentConnect</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <input type="checkbox" class="toggle-checkbox hidden" id="toggle" />
+                    <label for="toggle" class="toggle-label block w-10 h-6 rounded-full bg-black cursor-pointer relative">
+                        <span class="toggle-circle absolute w-4 h-4 bg-white rounded-full shadow inset-y-0 my-auto transition-transform duration-300"></span>
+                    </label>
+                </div>
+                <a href="" class="text-blue-600 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="#" class="text-blue-600 flex items-center">
+                    <i class="fas fa-phone mr-1"></i> Contact us
+                </a>
+                <a href="#" class="text-blue-600 flex items-center">
+                    <i class="fas fa-users mr-1"></i> Our Teams
+                </a>
+            </div>
+        </div>
+        <div class="bg-teal-300 h-screen flex flex-col items-center justify-start pt-20 transition-colors duration-300">
+            <p class="text-center text-xl font-semibold text-gray-800 transition-colors duration-300">
+                Your request has been sent. Our team<br>
+                Will contact you within 2-3 hours.
+            </p>
+        </div>
+    </div>
+    <script>
+        const toggle = document.getElementById('toggle');
+        const body = document.body;
+        const textElement = document.querySelector('p');
+        const tealSection = document.querySelector('.bg-teal-300');
+
+        toggle.addEventListener('change', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                textElement.classList.replace('text-gray-800', 'text-black');
+                tealSection.classList.add('bg-opacity-50');
+            } else {
+                textElement.classList.replace('text-black', 'text-gray-800');
+                tealSection.classList.remove('bg-opacity-50');
+            }
+        });
+    </script>
+</body>
+</html>
